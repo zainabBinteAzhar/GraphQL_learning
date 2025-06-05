@@ -1,0 +1,133 @@
+-- BEGINNER QUERIES --
+
+***** 1- Fetch the name and code of all countries. *****
+
+query {
+  countries {
+    name
+    code
+  }
+}
+
+
+***** 2- Get the name and capital of Brazil. *****
+
+query brazilInfo($name:ID!){
+  country(code:$name){
+    name
+    capital
+  }
+}
+
+QUERY VARIABLE: 
+{
+  "name":"BR"
+}
+
+
+***** 3- List all continents with their code and name. *****
+
+query allCountry{
+  countries{
+    name
+    code
+  }
+}
+
+
+***** 4- Retrieve the name and native name of Pakistan. *****
+
+query PakistanInfo($name:ID!){
+  country(code:$name){
+    name
+    native
+  }
+}
+
+QUERY VARIABLE: 
+{
+  "name":"PK"
+}
+
+
+***** 5- Get the currency of Japan. *****
+
+query JapanCurrency($name: ID!) {
+  country(code: $name) {
+    currency
+  }
+}
+
+QUERY VARIABLE: 
+{
+  "name":"JP"
+}
+
+
+***** 6- List the names of all languages. *****
+
+query allLanguages{
+  languages{
+    name
+  }
+}
+
+
+***** 7- Find the emoji of the country with code "CN". *****
+
+query emoji($name: ID!) {
+  country(code: $name) {
+    emoji
+    emojiU
+  }
+}
+
+QUERY VARIABLE: 
+{
+  "name":"CN"
+}
+
+
+***** 8- Get a list of all country codes only, without names.  *****
+
+query allCodes {
+  countries{
+  code
+  }
+}
+
+***** 9- Retrieve the code and native name of Italy. *****
+
+query italyInfo($code:ID!){
+  country(code:$code){
+  	code
+    native
+  }
+}
+
+QUERY VARIABLE: 
+{
+  "code":"IT"
+}
+
+
+***** 10- Get a country's details by its code, including native name, capital, currency, emoji, and its languages with codes and native names.*****
+
+query italyInfo($code: ID!) {
+  country(code: $code) {
+    code
+    native
+    capital
+    currency
+    emojiU
+    languages {
+      code
+      native
+    }
+  }
+}
+
+QUERY VARIABLE: 
+{
+  "code":"PK"
+}
