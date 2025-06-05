@@ -1,4 +1,4 @@
-# GraphQL Pagination Keywprds: `first`, `last`, `after`, `before`
+# GraphQL Pagination Keywords: `first`, `last`, `after`, `before`
 
 GraphQL doesn't have built-in pagination logic, but the **Connection Pattern** is widely used for efficient pagination. This is where `first`, `last`, `after`, and `before` come in.
 
